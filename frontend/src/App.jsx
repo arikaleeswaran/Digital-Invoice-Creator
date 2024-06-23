@@ -50,7 +50,7 @@ function App() {
   //Invoice Number Generate
   const fetchInvoiceNumber = async ()=>{
     try{
-    const response = await fetch("http://localhost:5000/generate-invoice-number");
+    const response = await fetch("https://invoicebackend.vercel.app/generate-invoice-number");
     if(!response.ok){
       throw new Error("failed to fetch data");
     }
@@ -175,7 +175,7 @@ function App() {
     try{
       //console.log(item.ItemName);
       console.log(newItem);
-      const response = await fetch("http://localhost:5000/products",{
+      const response = await fetch("https://invoicebackend.vercel.app/products",{
         method:"POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify(newItem)
@@ -238,7 +238,7 @@ function App() {
       console.log("put-invoice",invoiceItem[0]);
       console.log("id",id);
       const data = updateItems;
-      const response = await fetch(`http://localhost:5000/products/${id}`,{
+      const response = await fetch(`https://invoicebackend.vercel.app/products/${id}`,{
         method:"PUT",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify(data)
@@ -270,7 +270,7 @@ const handleDelete = async(id)=>{
   calculateOverAll(updateinvoiceItems);
 
   try{
-    const response = await fetch(`http://localhost:5000/${id}`,{
+    const response = await fetch(`https://invoicebackend.vercel.app/${id}`,{
       method:"DELETE"
     })
     if(!response.ok){
@@ -297,7 +297,7 @@ const totalUpdate = async (id,overallTotal)=>{
 
   //const newTot = overallTotal;
   try{
-    const response = await fetch(`http://localhost:5000/invoice/${id}`,{
+    const response = await fetch(`https://invoicebackend.vercel.app/invoice/${id}`,{
       method:"PUT",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify.stringify({overallTotal})

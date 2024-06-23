@@ -39,7 +39,7 @@ function Customer({customData,setCustomData,custId,invoiceNum,invoiceDate, btnVi
             console.log(reqData);
             
             setBtnVisible(false);
-            const response = await fetch("http://localhost:5000/users",{
+            const response = await fetch("https://invoicebackend.vercel.app/users",{
               method:"POST",
               headers:{"Content-Type":"application/json"},
               body:JSON.stringify(reqData)
