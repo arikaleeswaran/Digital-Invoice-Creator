@@ -1,15 +1,20 @@
 {
     "version": 2,
     "builds": [
-        {
-            "src": "server.js",
-            "use": "@vercel/node"
-        }
+      {
+        "src": "index.js",
+        "use": "@vercel/node"
+      }
     ],
     "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/index.html"
-        }
-    ]
-}
+      {
+        "src": "/(.*)",
+        "dest": "index.js"
+      }
+    ],
+    "env": {
+      "DATABASE_URL": "postgres://postgres.tyjihsgkejrqbuposdhi:ari@SupabaseDB@aws-0-ap-south-1.pooler.supabase.com:6543/postgres",
+      "PORT": "3000"
+    }
+  }
+  

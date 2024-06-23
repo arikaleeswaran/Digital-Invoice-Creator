@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const pool = require('./db');
+const pool = require('../db');
 const cors = require('cors');
+
 
 //Middlewares
 app.use(express.json());
@@ -208,7 +209,9 @@ app.put('/invoice/:id',async (req,res)=>{
     }
 })
 
-
-app.listen(5000,()=>{
+const PORT=process.env.PORT
+app.listen(PORT,()=>{
     console.log("Server Connected");
 })
+
+module.exports = app;
