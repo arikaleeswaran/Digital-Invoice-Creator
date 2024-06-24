@@ -11,7 +11,7 @@ function HeadNav({invoiceNum,invoiceDate}) {
           <p>Invoice Date: {invoiceDate}</p>
         </div>
         <div className='text-left md:text'>
-          <h3 className='text-2xl font-serif'>Sample Enterprices</h3>
+          <h3 className='text-2xl font-serif whitespace-nowrap'>Sample Enterprices</h3>
           <div className='text-end '>
             {/* <p>{CONTACT.address.street},</p> */}
             <p className='font-serif'>{CONTACT.address.city},</p>

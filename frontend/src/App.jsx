@@ -363,7 +363,7 @@ useEffect(()=>{
         </div>
 
       {/* Table */}
-      <table className='table-auto w-full border-collapse border-b-2 rounded-1xl my-3'>
+      <table className='table-auto w-full border-collapse border-b-2 rounded-xl my-3'>
         <thead className='bg-gradient-to-tr from-violet-600 via-violet-600 to-violet-600 text-white'>
           <tr>
               <th className='px-4 py-2 text-left'>Item ID</th>
@@ -378,7 +378,7 @@ useEffect(()=>{
         </thead>
         <tbody>
           {invoiceItem.map((item)=>(
-            <tr key={item.Item_id}>
+            <tr key={item.Item_id} className='border-b'>
               <td className='px-4 py-2 text-left'>{item.Item_id}</td>
               <td className='px-4 py-2 text-left'>{item.ItemName}</td>
               <td className='px-4 py-2 text-center'>{item.Quantity}</td>
@@ -386,11 +386,11 @@ useEffect(()=>{
               <td className='px-4 py-2 text-right'>{item.Amount}</td>
               <td className='px-4 py-2 text-right'>{item.GST}</td>
               <td className='px-4 py-2 text-right'>{item.Total}</td>
-              <td className='px- py-1 text-center'>
+              <td className='px-4 py-2 text-center'>
                 {item.isEditable && (
                   <>
                   <button className='px-3 py-1 outline-none rounded-xl bg-blue-500 mx-2 my-2 text-white' onClick={()=>{handleEditClick(item)}}>Update</button> 
-                  <button className='px-3 py-1 outline-none rounded-xl bg-red-600 mx- my-2 text-white' onClick={()=>{handleDelete(item.Item_id)}} >Delete</button>
+                  <button className='px-3 py-1 outline-none rounded-xl bg-red-600 mx-2 my-2 text-white' onClick={()=>{handleDelete(item.Item_id)}} >Delete</button>
                   </>
                 )}
               </td>
