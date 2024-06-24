@@ -129,7 +129,7 @@ function App() {
         GST:newGST,
         Total:newTot
     }));
-    console.log("formdata-change:",formData,updateItem);
+   // console.log("formdata-change:",formData,updateItem);
     return updateItem;
     });
   };
@@ -138,7 +138,7 @@ function App() {
   const handleAdd = async(e)=>{
     e.preventDefault();
 
-    console.log("Custom-add",customData);
+   // console.log("Custom-add",customData);
     const newItem = {
       Item_id:formData.Item_id,
       ItemName:formData.ItemName,
@@ -168,8 +168,8 @@ function App() {
       Total: 0,
     });
     
-    console.log(invoiceItem);
-    console.log(formData);
+    // console.log(invoiceItem);
+    // console.log(formData);
     setShowModel(false);
   
     try{
@@ -195,7 +195,7 @@ function App() {
     //e.preventDefault();
     const editedItem = invoiceItem.find((i)=> i.Item_id === item.Item_id);
     setEditingItem(editedItem);
-    console.log("sdf",editedItem);
+   // console.log("sdf",editedItem);
     setShowModel(true);
     setFormData({
       Item_id : editedItem.Item_id,
@@ -218,20 +218,19 @@ function App() {
       Item_id: editingItem.Item_id,
     };
 
-    console.log("Editing Item :",editingItem);
-    console.log("form Data:",formData);
-    console.log( "zzzzf",updateItems,invoiceItem);
+    // console.log("Editing Item :",editingItem);
+    // console.log("form Data:",formData);
+    // console.log( "zzzzf",updateItems,invoiceItem);
 
     const updateInvoiceItem = invoiceItem.map((item)=>{
       return item.Item_id === editingItem.Item_id ? updateItems : item;
     })
 
-    console.log("update:",updateInvoiceItem);
+    //console.log("update:",updateInvoiceItem);
     setInvoiceItem(updateInvoiceItem);
     calculateOverAll(updateInvoiceItem);
     setShowModel(false);
   
-
     try{
 
       const id =editingItem.Item_id;
