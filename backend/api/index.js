@@ -3,15 +3,25 @@ const app = express();
 const bodyParser = require('body-parser');
 const pool = require('../db');
 const cors = require('cors');
-
+require('dotenv').config()
 
 //Middlewares
+
+
+
+// const cors = require('cors');
+
 app.use(express.json());
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+  origin: 'https://invoicegenerator-tawny.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 
+// app.use(cors());
 
-app.get('/health',(req,res)=>{
+app.get('/',(req,res)=>{
     res.send("Working!");
 })
 
@@ -207,11 +217,6 @@ app.put('/invoice/:id',async (req,res)=>{
         console.log(error);
         return res.status(500).json(error)
     }
-})
-
-const PORT=process.env.PORT
-app.listen(PORT,()=>{
-    console.log("Server Connected");
 })
 
 module.exports = app;
