@@ -7,17 +7,16 @@ require('dotenv').config()
 
 //Middlewares
 
-
-
-// const cors = require('cors');
-
-app.use(express.json());
-app.use(bodyParser.json());
 app.use(cors({
   origin: 'https://invoicegenerator-tawny.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
+app.options('*', cors());
+
+app.use(express.json());
+app.use(bodyParser.json());
+
 
 // app.use(cors());
 
