@@ -50,7 +50,7 @@ function App() {
   //Invoice Number Generate
   const fetchInvoiceNumber = async ()=>{
     try{
-    const response = await fetch("https://invoicebackend.vercel.app/generate-invoice-number");
+    const response = await fetch("https://invoicebackend.vercel.app/api/generate-invoice-number");
     if(!response.ok){
       throw new Error("failed to fetch data");
     }
