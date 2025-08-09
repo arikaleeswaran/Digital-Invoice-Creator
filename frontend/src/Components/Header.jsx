@@ -2,12 +2,15 @@ import React from 'react'
 import { CONTACT } from '../constants/content';
 
 function HeadNav({invoiceNum,invoiceDate}) {
+  console.log(invoiceNum);
 
   return (
     <div className='flex md:text-base justify-between'>
         <div className='mb-4 md:mb-0'>
           <h1 className='text-stone-950 text-4xl my-2 font-serif tracking-wide'>INVOICE</h1>
           <p>Invoice No. : {invoiceNum} </p>
+          
+          
           <p>Invoice Date: {invoiceDate}</p>
         </div>
         <div className='text-left md:text'>
