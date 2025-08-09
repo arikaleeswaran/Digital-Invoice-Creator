@@ -25,7 +25,7 @@ app.get('/',(req,res)=>{
 })
 
 //INVOICE NUMBER GENERATOR TRANSACTION
-app.get('/generate-invoice-number', async (req,res)=>{
+app.get('/api/generate-invoice-number', async (req,res)=>{
     try{
         await pool.query('BEGIN');
 
